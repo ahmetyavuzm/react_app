@@ -31,6 +31,7 @@ const Navbar = () => {
         >
           <Image 
           src ="./images/logo_transparent2.png" 
+          alt="logo"
           width={150}
           height={100}
           className="mt-1"
