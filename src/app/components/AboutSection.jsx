@@ -72,7 +72,7 @@ const AboutSection = () => {
                 key={index}
                 selectTab={() => handleTabChange(t.id)}
                 active={tab === t.id}
-                children={t.title}
+                title={t.title}
               />
             ))}
           </div>

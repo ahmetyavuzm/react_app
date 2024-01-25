@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TabButton = ({active , selectTab, children}) => {
+const TabButton = ({active , selectTab, title}) => {
     const defaultClasses = " mr-3 font-semibold ";
     const activeClasses = " text-white border-b border-cyan-400 "
     const deactiveClasses = " text-[#ADB7BE] hover:text-white "
@@ -10,7 +10,7 @@ const TabButton = ({active , selectTab, children}) => {
     return (
     <button onClick = {selectTab}>
         <p className = {`${buttonClasses}`}>
-            {children}
+            {title}
         </p>
     </button>
     )
