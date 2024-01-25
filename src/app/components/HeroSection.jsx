@@ -1,29 +1,35 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useState, useTransition } from "react";
 import Image from "next/image";
-import { TypeAnimation } from 'react-type-animation';
-
+import Link from "next/link";
+import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
-  
+  const [isHover, setIsHover] = useState(false);
+
   return (
     <section>
       <div className="grid grid-cols-1 lg:grid-cols-12 ">
         <div className="col-span-7 place-self-center text-center sm:text-left">
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
-            <span className = {` text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-500`} > {"Hello, I'm "}</span>
+            <span
+              className={` text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-500`}
+            >
+              {" "}
+              {"Hello, I'm "}
+            </span>
             <br></br>
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
-                'Yavuz',
+                "Yavuz",
                 1000, // wait 1s before replacing "Mice" with "Hamsters"
-                'Web Developer',
+                "Web Developer",
                 1000,
-                'Backend Developer',
+                "Backend Developer",
                 1000,
-                'AI Programmer',
-                1000
+                "AI Programmer",
+                1000,
               ]}
               wrapper="span"
               speed={50}
@@ -36,25 +42,41 @@ const HeroSection = () => {
             amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
             consectetur adipisicing elit.
           </p>
-          <div className= "flex flex-wrap">
-            <button className={`px-6 py-3 w-full sm:w-fit rounded-full sm:mr-4 bg-gradient-to-br from-cyan-400 to-yellow-500 hover:text-black text-white `}>Hire Me</button>
-            <div className= {`rounded-full flex w-full sm:w-fit mt-3 sm:mt-0 px-[1px] py-[1px] bg-gradient-to-br from-cyan-400 to-yellow-500`}>
+          <div className="flex flex-wrap">
+            <button
+              className={`px-6 py-3 w-full sm:w-fit rounded-full sm:mr-4 bg-gradient-to-br from-cyan-400 to-yellow-500 hover:text-black text-white `}
+            >
+              Hire Me
+            </button>
+            <div
+              className={`rounded-full flex w-full sm:w-fit mt-3 sm:mt-0 px-[1px] py-[1px] bg-gradient-to-br from-cyan-400 to-yellow-500`}
+            >
               <button className="w-full rounded-full bg-[#121212] bg-opacity-100 ">
-                <div className="px-6 py-3 sm:w-fit rounded-full w-full z-20 text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 to-yellow-500 hover:text-white"> Download CV</div>
+                <div className="px-6 py-3 sm:w-fit rounded-full w-full z-20 text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 to-yellow-500 hover:text-white">
+                  {" "}
+                  Download CV
+                </div>
               </button>
             </div>
           </div>
         </div>
-        <div className="col-span-5 place-self-center mt-4 lg:mt-0">
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] md:w-[400px] md:h-[400px] relative">
-            <Image 
-            src="./images/developer.png" 
-            alt="hero_image"
-            width={400} 
-            height={400} 
-            className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"    
+
+        <div className="flex items-center justify-center col-span-5 place-self-center mt-4 lg:mt-0 relative w-[240px] h-[240px] sm:w-[390px] sm:h-[390px] md">
+            <div className="absolute rounded-full animate-wave w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-opacity-50 bg-cyan-500"></div>
+            <div className="absolute rounded-full animate-wave-delay-1s w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-opacity-50 bg-green-300"></div>
+            <div className="absolute rounded-full animate-wave-delay-2s w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-opacity-50 bg-yellow-200"></div>
+
+          <Link  href={"/"} className="absolute">
+            <Image
+              src="./images/my_cartoon.png"
+              alt="hero_image"
+              width={300}
+              height={300}
+              className="rounded-full w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] hover:cursor-pointer"
+              onMouseEnter={() => setIsHover(true)}
+              onMouseLeave={() => setIsHover(false)}
             />
-          </div>
+          </Link>
         </div>
       </div>
     </section>
