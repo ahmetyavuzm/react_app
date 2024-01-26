@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -32,15 +34,49 @@ module.exports = {
             transform: "scale(1)" },
         },
 
+        stretchX : {
+          '0%': { 
+            transform: "scaleX(1)"
+          },
+          '100%': { 
+            transform: "scaleX(6)" },
+        },
+
+        stretchY : {
+          '0%': { 
+            transform: "scaleY(1)"
+          },
+          '100%': { 
+            transform: "scaleY(6)" },
+        },
+
+
       },
       animation: {
-        'wave': 'wave 3s linear infinite',
-        "wave-delay-1s" : "wave 3s linear 1s infinite",
-        "wave-delay-2s" : "wave 3s linear 2s infinite",
-        "breathe": "breathe 1s linear infinite"
+        'wave': 'wave 2s linear infinite',
+        "wave-delay-1s" : "wave 2s linear 1s infinite",
+        "breathe": "breathe 1s linear infinite",
+        "stretchX" : "stretchX 1s linear",
+        "stretchY" : "stretchY 1s linear",
+
       },
 
     },
+
+    colors: {
+      ...colors,
+      primary: colors.cyan,
+      secondary: colors.yellow,
+      navbar:"#121212",
+    },
+
   },
   plugins: [],
+
+  safelist: [
+    {
+      pattern: /^(bg|text|from|to|via)-(red|yellow|green|blue|indigo|purple|pink|cyan)-[0-9]{1,3}$/,
+    }
+  ],
+
 }

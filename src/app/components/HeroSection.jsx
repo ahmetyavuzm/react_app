@@ -13,7 +13,7 @@ const HeroSection = () => {
         <div className="col-span-7 place-self-center text-center sm:text-left">
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
             <span
-              className={` text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-yellow-500`}
+              className={` text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500 `}
             >
               {" "}
               {"Hello, I'm "}
@@ -44,15 +44,15 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-wrap">
             <button
-              className={`px-6 py-3 w-full sm:w-fit rounded-full sm:mr-4 bg-gradient-to-br from-cyan-400 to-yellow-500 hover:text-black text-white `}
+              className={`px-6 py-3 w-full sm:w-fit rounded-full sm:mr-4 bg-gradient-to-br from-primary-400 to-secondary-500  hover:text-black text-white `}
             >
               Hire Me
             </button>
             <div
-              className={`rounded-full flex w-full sm:w-fit mt-3 sm:mt-0 px-[1px] py-[1px] bg-gradient-to-br from-cyan-400 to-yellow-500`}
+              className={`rounded-full flex w-full sm:w-fit mt-3 sm:mt-0 px-[1px] py-[1px] bg-gradient-to-br from-primary-400 to-secondary-500 `}
             >
               <button className="w-full rounded-full bg-[#121212] bg-opacity-100 ">
-                <div className="px-6 py-3 sm:w-fit rounded-full w-full z-20 text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 to-yellow-500 hover:text-white">
+                <div className="px-6 py-3 sm:w-fit rounded-full w-full z-20 text-transparent bg-clip-text bg-gradient-to-br from-primary-400 to-secondary-500  hover:text-white">
                   {" "}
                   Download CV
                 </div>
@@ -62,9 +62,8 @@ const HeroSection = () => {
         </div>
 
         <div className="flex items-center justify-center col-span-5 place-self-center mt-4 lg:mt-0 relative w-[240px] h-[240px] sm:w-[390px] sm:h-[390px] md">
-            <div className="absolute rounded-full animate-wave w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-opacity-50 bg-cyan-500"></div>
-            <div className="absolute rounded-full animate-wave-delay-1s w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-opacity-50 bg-green-300"></div>
-            <div className="absolute rounded-full animate-wave-delay-2s w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-opacity-50 bg-yellow-200"></div>
+            <div className="absolute rounded-full animate-wave w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-opacity-50 bg-primary-500"></div>
+            <div className="absolute rounded-full animate-wave-delay-1s w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-opacity-50 bg-secondary-200"></div>
 
           <Link  href={"/"} className="absolute">
             <Image
