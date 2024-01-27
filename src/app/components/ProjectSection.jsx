@@ -4,6 +4,8 @@ import ProjectCard from "./ProjectCard.jsx";
 
 const tags = ["All", "Web", "AI", "Console App", "Game", "Mobile"];
 
+let firstUpdate = false;
+
 const ProjectSection = () => {
   const [projects, setProjects] = React.useState([]);
 
@@ -12,13 +14,12 @@ const ProjectSection = () => {
   React.useEffect(() => {
     const fetchData = async () => {
       const result = await GithubService.getProjects();
+      firstUpdate = true;
       setProjects(result);
     };
 
     fetchData();
   }, []);
-
-  console.log(projects);
 
 
   let filteredProjects = projects.filter((project) => {
@@ -30,7 +31,10 @@ const ProjectSection = () => {
   });
 
   return (
-    <section id="projects-section" className="flex flex-col items-center justify-start mt-4">
+    <section
+      id="projects-section"
+      className="flex flex-col items-center justify-start mt-4"
+    >
       <div className="mb-2 lg:mb-4">
         <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-semibold">
           Projects
@@ -65,7 +69,23 @@ const ProjectSection = () => {
             </li>
           ))}
 
-          <span className={`${filteredProjects.length === 0 ? "flex items-center justify-center": "hidden"} text-xl md:text-3xl lg:text-4xl font-semibold text-darktext w-full h-[300px] lg:h-[450px] `}> {`No Project :(`}</span>
+          <span
+            className={`${
+              filteredProjects.length === 0 && firstUpdate
+                ? "flex items-center justify-center"
+                : "hidden"
+            } text-xl md:text-3xl lg:text-4xl font-semibold text-darktext w-full h-[300px] lg:h-[450px] `}
+          >
+            {" "}
+            {`No Project :(`}
+          </span>
+          <span
+            className={`${
+              !firstUpdate ? "flex items-center justify-center" : "hidden"
+            } text-xl md:text-3xl lg:text-4xl font-semibold text-darktext w-full h-[300px] lg:h-[450px] `}
+          >
+            Loading...
+          </span>
         </ul>
       </div>
     </section>

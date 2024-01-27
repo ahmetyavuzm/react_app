@@ -1,5 +1,6 @@
 {
     "title": "My Portfolio Website",
     "description": "My Portfolio Website built with React, Next.js, and Tailwind CSS.",
+    "longDescription": "My Portfolio Website built with React, Next.js, and Tailwind CSS.",
     "tags":["All", "Web", "Frontend"]
 }
