@@ -2,7 +2,7 @@
 
 const username = "ahmetyavuzm";
 const URL = `https://api.github.com/users/${username}`;
-const token = "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";
+const token = "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";
 
 const headers =  {
     Authorization: `Bearer ${token}`
