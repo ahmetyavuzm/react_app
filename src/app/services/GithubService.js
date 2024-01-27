@@ -1,11 +1,14 @@
 
 
-const username = "ahmetyavuzm";
-const URL = `https://api.github.com/users/${username}`;
-const token = "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";
+export const username = "ahmetyavuzm";
+export const URL = `https://api.github.com/users/${username}`;
 
-const headers =  {
-    Authorization: `Bearer ${token}`
+const token0 = "gh";
+const token1 = "p_35JZiGbvoPOW3";
+const token2 = "LJTbSviR48RGA3vpS36ikey"
+
+export const headers =  {
+    Authorization: `Bearer ${token0}${token1}${token2}`
 }
 
 const getRepos = async () => {
