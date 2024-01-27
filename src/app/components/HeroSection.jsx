@@ -1,11 +1,11 @@
 "use client";
-import React, { useState, useTransition } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
+import GithubService from "../services/GithubService.js";
 
 const HeroSection = () => {
-  const [isHover, setIsHover] = useState(false);
 
   return (
     <section>
@@ -72,8 +72,6 @@ const HeroSection = () => {
               width={300}
               height={300}
               className="rounded-full w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] hover:cursor-pointer"
-              onMouseEnter={() => setIsHover(true)}
-              onMouseLeave={() => setIsHover(false)}
             />
           </Link>
         </div>

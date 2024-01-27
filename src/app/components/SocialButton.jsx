@@ -11,8 +11,6 @@ const SocialButton = ({link, icon, colors}) => {
 
   const primaryText = `text-${colors.default}`;
   const secondaryText = `text-${colors.hover}`;
-
-  console.log(primary);
   
  
   return (

@@ -68,6 +68,8 @@ module.exports = {
       primary: colors.cyan,
       secondary: colors.yellow,
       navbar:"#121212",
+      background:"#121212",
+      darktext: "#ADB7BE",
     },
 
   },
