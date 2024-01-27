@@ -2,7 +2,7 @@
 
 const username = "ahmetyavuzm";
 const URL = `https://api.github.com/users/${username}`;
-const token = "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";
+const token = "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";
 
 const headers =  {
     Authorization: `Bearer ${token}`
@@ -88,5 +88,5 @@ const getProjects = async () => {
 }
 
 export default{
-    getProjects,
+    getProjects
 }

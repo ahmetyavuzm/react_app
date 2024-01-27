@@ -18,6 +18,8 @@ const ProjectSection = () => {
     fetchData();
   }, []);
 
+  console.log(projects);
+
 
   let filteredProjects = projects.filter((project) => {
     if (currentTag === "All") {
