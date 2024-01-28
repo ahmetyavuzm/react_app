@@ -17,7 +17,7 @@ const SocialButton = ({link, icon, colors}) => {
     <Link
     href = {link}>
       <div
-        className="flex items-center justify-center w-7 h-7 relative"
+        className="flex items-center justify-center h-full w-full relative"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

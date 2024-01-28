@@ -50,6 +50,14 @@ module.exports = {
             transform: "scaleY(6)" },
         },
 
+        spin_once: {
+          '0%': { 
+            transform: "rotate(0deg)"
+          },
+          '100%': { 
+            transform: "rotate(360deg)" },
+        }
+
 
       },
       animation: {
@@ -58,6 +66,7 @@ module.exports = {
         "breathe": "breathe 1s linear infinite",
         "stretchX" : "stretchX 1s linear",
         "stretchY" : "stretchY 1s linear",
+        "spin_once" : "spin_once 0.5s linear 1",
 
       },
 

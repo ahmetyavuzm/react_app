@@ -1,0 +1,45 @@
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faLinkedin,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+
+export const socialLinks = [
+    {
+      id: "instagram",
+      title: "Instagram",
+      link: "https://www.instagram.com/ayavuzm/",
+      colors: {
+        default: "pink-400",
+        hover: "pink-200",
+      },
+  
+      icon: <FontAwesomeIcon icon={faInstagram} />,
+    },
+  
+    {
+      id: "linkedin",
+      title: "Linkedin",
+      link: "https://www.linkedin.com/in/ahmet-yavuz-mutlu-478870225/",
+      colors: {
+        default: "blue-400",
+        hover: "blue-200",
+      },
+  
+      icon: <FontAwesomeIcon icon={faLinkedin} />,
+    },
+  
+    {
+      id: "github",
+      title: "github",
+      link: "https://github.com/ahmetyavuzm",
+      colors: {
+        default: "green-400",
+        hover: "green-200",
+      },
+  
+      icon: <FontAwesomeIcon icon={faGithub} />,
+    },
+  ];

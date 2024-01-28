@@ -6,8 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faEye, faX } from "@fortawesome/free-solid-svg-icons";
 
 import Modal from "@mui/material/Modal";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 
 const ProjectCard = ({ project }) => {
   const [isHovered, setIsHovered] = React.useState(false);
