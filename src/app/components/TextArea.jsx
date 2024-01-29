@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
 
-const TextArea = ({ className = "", rows = "5", placeholder = "" }) => {
+const TextArea = ({ className = "", rows = "5", placeholder = "" , onChange = () => {},}) => {
   const [value, setValue] = React.useState("");
 
   const handleChange = (e) => {
     setValue(e.target.value);
+    onChange(e.target.value);
   };
 
   return (

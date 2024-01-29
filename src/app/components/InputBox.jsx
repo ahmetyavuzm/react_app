@@ -12,6 +12,7 @@ const InputBox = ({
   type = "text",
   placeholder = "",
   validationRegex = undefined,
+  onChange = () => {},
 }) => {
   const [isFocused, setIsFocused] = React.useState(undefined);
   const [firstFocus, setFirstFocus] = React.useState(true);
@@ -38,9 +39,9 @@ const InputBox = ({
     if (validationRegex) {
       setIsValid(validationRegex.test(e.target.value));
     }
+    onChange(e.target.value);
   };
 
-  console.log(isValid);
   return (
     <div className={className}>
       <div className="flex items-center relative w-full h-auto">

@@ -6,8 +6,6 @@ const LanguageSwitchButton = () => {
     const {language, changeLanguage} = React.useContext(LanguageContext);
   const [isLangTR, setIsLangTR] = React.useState(language === "tr");
   
-
-  console.log(language);
   const handleLangChange = () => {
     setIsLangTR(!isLangTR);
     changeLanguage(isLangTR? "en": "tr");
