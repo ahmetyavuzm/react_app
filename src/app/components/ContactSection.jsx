@@ -30,7 +30,8 @@ const ContactSection = ({content}) => {
             
         </div>
 
-        <div className='w-10/12 h-full mt-8 sm:w-[300px] lg:w-[400px] md:mt-0'>
+
+        <form className='w-10/12 h-full mt-8 sm:w-[300px] lg:w-[400px] md:mt-0'>
             <div className='mb-2 lg:mb-8'>
                 <h1 className='text-md lg:text-2xl bg-black font-semibold text-gray-200'>{content["form"]["email"]["title"]}</h1>
                 <InputBox className='text-sm lg:text-lg' type="email" placeholder={content["form"]["email"]["placeholder"]} validationRegex={/^[^\s@]+@[^\s@]+\.[^\s@]+$/} />
@@ -43,7 +44,11 @@ const ContactSection = ({content}) => {
                 <h1 className='text-md lg:text-2xl font-semibold text-gray-200'>{content["form"]["message"]["title"]}</h1>
                 <TextArea className='text-sm lg:text-lg' rows="7" placeholder={content["form"]["message"]["placeholder"]} />
             </div>
-        </div>
+
+            <div>
+                <button className='w-full h-10 bg-primary-400 text-white text-sm lg:text-lg font-semibold rounded-md'>{content["form"]["submit"]["title"]}</button>
+            </div>
+        </form>
     </div>
     </section>
   )
