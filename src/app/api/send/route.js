@@ -7,7 +7,7 @@ const FROM_EMAIL="mail@yavuzmutlu.com";
 const resend = new Resend(RESEND_API_KEY);
 const fromEmail = FROM_EMAIL;
 
-export async function POST(req, res) {
+export  async function POST(req, res) {
   const body =  await req.json()
   const {email, subject , message} = body;
  

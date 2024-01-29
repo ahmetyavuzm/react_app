@@ -22,9 +22,7 @@ const ContactSection = ({ content }) => {
         subject: subject,
         message: message,
         };
-
-    console.log(data);
-
+    
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/send";
 
@@ -45,6 +43,7 @@ const ContactSection = ({ content }) => {
     if (responseData.status === 200) {
         console.log("Message Sent.");
     }
+
 
     }
   return (
