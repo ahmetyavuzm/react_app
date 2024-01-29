@@ -65,11 +65,13 @@ const HeroSection = ({ content }) => {
               {content["title"]}
             </span>
             <br></br>
-            <span id="typing-animation">
+            <div className="flex justify-center  sm:block">
+            <div id="typing-animation" className=" flex justify-center sm:block h-[100px] w-[200px] text-center sm:h-[150px] lg:h-auto sm:w-auto sm:text-start ">
               {element}
               {dummyAddButton}
               {dummyDeleteButton}
-            </span>
+            </div>
+            </div>
           </h1>
           <p className="text-[#ADB7BE] mb-6 text-lg lg:text-xl">
             {content["description"]}
