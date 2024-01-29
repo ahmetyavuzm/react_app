@@ -13,14 +13,17 @@ const ContactSection = ({ content }) => {
   const [subject, setSubject] = React.useState("");
   const [message, setMessage] = React.useState("");
 
+  console.log(email, subject, message);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
-        email: email,
+        email:email,
         subject: subject,
         message: message,
         };
+
+    console.log(data);
 
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/send";
@@ -34,7 +37,7 @@ const ContactSection = ({ content }) => {
         };
     
 
-    const response = await fetch(endpoint , options);
+    const response = await fetch(endpoint, options);
     console.log(response);
     const responseData = await response.json();
     console.log(responseData);

@@ -77,11 +77,12 @@ const HeroSection = ({ content }) => {
             {content["description"]}
           </p>
           <div className="flex flex-wrap">
-            <button
+            <Link
+              href="#contact-section"
               className={`px-6 py-3 w-full sm:w-fit rounded-full sm:mr-4 bg-gradient-to-br from-primary-400 to-secondary-500  hover:text-black text-white `}
             >
               {content["hire-button"]}
-            </button>
+            </Link>
             <div
               className={`rounded-full flex w-full sm:w-fit mt-3 sm:mt-0 px-[1px] py-[1px] bg-gradient-to-br from-primary-400 to-secondary-500 `}
             >
