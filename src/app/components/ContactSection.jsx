@@ -34,7 +34,8 @@ const ContactSection = ({ content }) => {
         };
     
 
-    const response = await fetch(endpoint, options);
+    const response = await fetch(endpoint , options);
+    console.log(response);
     const responseData = await response.json();
     console.log(responseData);
 
