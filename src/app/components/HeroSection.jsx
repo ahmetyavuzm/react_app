@@ -1,10 +1,58 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
+import { LanguageContext } from "../contexts/LanguageContext";
 
-const HeroSection = () => {
+const HeroSection = ({ content }) => {
+  const getTypingSequence = () => {
+    let sequence = [];
+    for (const text of content["typing-strings"]) {
+      sequence.push(text);
+      sequence.push(1000);
+    }
+    return sequence;
+  };
+
+  const getTypingElement = () => {
+    return (
+      <TypeAnimation
+        sequence={getTypingSequence()}
+        wrapper={"span"}
+        speed={50}
+        repeat={Infinity}
+      />
+    );
+  };
+
+  const [typingSequence, setTypingSequence] = React.useState(
+    getTypingSequence()
+  );
+  const { language, changeLanguage } = React.useContext(LanguageContext);
+
+  const [element, setElement] = React.useState(getTypingElement());
+
+  React.useEffect(() => {
+    setTypingSequence(getTypingSequence());
+    let dummy = document.getElementById("dummy-delete");
+    dummy.click();
+  }, [language]);
+
+  React.useEffect(() => {
+    let dummy = document.getElementById("dummy-add");
+    dummy.click();
+  }, [typingSequence]);
+
+  const dummyAddButton = (
+    <button
+      id="dummy-add"
+      onClick={() => setElement(getTypingElement())}
+    ></button>
+  );
+  const dummyDeleteButton = (
+    <button id="dummy-delete" onClick={() => setElement(<div></div>)}></button>
+  );
 
   return (
     <section>
@@ -14,46 +62,34 @@ const HeroSection = () => {
             <span
               className={` text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500 `}
             >
-              {" "}
-              {"Hello, I'm "}
+              {content["title"]}
             </span>
             <br></br>
-            <TypeAnimation
-              sequence={[
-                // Same substring at the start will only be typed out once, initially
-                "Yavuz",
-                1000, // wait 1s before replacing "Mice" with "Hamsters"
-                "Web Developer",
-                1000,
-                "Backend Developer",
-                1000,
-                "AI Programmer",
-                1000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
+            <span id="typing-animation">
+              {element}
+              {dummyAddButton}
+              {dummyDeleteButton}
+            </span>
           </h1>
           <p className="text-[#ADB7BE] mb-6 text-lg lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit.
+            {content["description"]}
           </p>
           <div className="flex flex-wrap">
             <button
               className={`px-6 py-3 w-full sm:w-fit rounded-full sm:mr-4 bg-gradient-to-br from-primary-400 to-secondary-500  hover:text-black text-white `}
             >
-              Hire Me
+              {content["hire-button"]}
             </button>
             <div
               className={`rounded-full flex w-full sm:w-fit mt-3 sm:mt-0 px-[1px] py-[1px] bg-gradient-to-br from-primary-400 to-secondary-500 `}
             >
-              <button className="w-full rounded-full bg-[#121212] bg-opacity-100 ">
+              <button
+                id="download-btn"
+                className="w-full rounded-full bg-[#121212] bg-opacity-100 "
+              >
                 <div className="px-6 py-3 sm:w-fit rounded-full w-full z-20 text-transparent bg-clip-text bg-gradient-to-br from-primary-400 to-secondary-500  hover:text-white">
                   {" "}
-                  Download CV
+                  {content["download-button"]}
                 </div>
               </button>
             </div>
@@ -61,10 +97,10 @@ const HeroSection = () => {
         </div>
 
         <div className="flex items-center justify-center col-span-5 place-self-center mt-4 lg:mt-0 relative w-[240px] h-[240px] sm:w-[390px] sm:h-[390px] md">
-            <div className="absolute rounded-full animate-wave w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-opacity-50 bg-primary-500"></div>
-            <div className="absolute rounded-full animate-wave-delay-1s w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-opacity-50 bg-secondary-200"></div>
+          <div className="absolute rounded-full animate-wave w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-opacity-50 bg-primary-500"></div>
+          <div className="absolute rounded-full animate-wave-delay-1s w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-opacity-50 bg-secondary-200"></div>
 
-          <Link  href={"/"} className="absolute">
+          <Link href={"/"} className="absolute">
             <Image
               src="./images/my_cartoon.png"
               alt="hero_image"

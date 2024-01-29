@@ -1,10 +1,18 @@
 
+"use Client";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
   faLinkedin,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+
+import React from "react";
+
+
+//export const jsonData = await import('../../public/content.json');
+//console.log(jsonData["content"]["en"]["about-section"][""]);
 
 export const socialLinks = [
     {

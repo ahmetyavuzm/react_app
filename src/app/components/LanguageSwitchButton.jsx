@@ -1,9 +1,16 @@
 import React from "react";
+import {LanguageContext} from "../contexts/LanguageContext";
+
 
 const LanguageSwitchButton = () => {
-  const [isLangTR, setIsLangTR] = React.useState(true);
+    const {language, changeLanguage} = React.useContext(LanguageContext);
+  const [isLangTR, setIsLangTR] = React.useState(language === "tr");
+  
+
+  console.log(language);
   const handleLangChange = () => {
     setIsLangTR(!isLangTR);
+    changeLanguage(isLangTR? "en": "tr");
   };
   return (
     <button
@@ -35,5 +42,7 @@ const LanguageSwitchButton = () => {
     </button>
   );
 };
+
+
 
 export default LanguageSwitchButton;

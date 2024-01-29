@@ -56,7 +56,17 @@ module.exports = {
           },
           '100%': { 
             transform: "rotate(360deg)" },
-        }
+        },
+
+        lazy: {
+          '0%': { 
+            opacity: "0"
+          },
+          '100%': { 
+            opacity: "1" },
+        },
+
+
 
 
       },
@@ -67,6 +77,7 @@ module.exports = {
         "stretchX" : "stretchX 1s linear",
         "stretchY" : "stretchY 1s linear",
         "spin_once" : "spin_once 0.5s linear 1",
+        "lazy" : "lazy .5s linear",
 
       },
 

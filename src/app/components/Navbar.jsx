@@ -8,34 +8,34 @@ import SocialButton from "./SocialButton";
 import LanguageSwitchButton from "./LanguageSwitchButton";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInstagram,
-  faLinkedin,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
 import { socialLinks } from "../utils";
 
 
 
-const navLinks = [
+let navLinks = [
   {
-    title: "About",
+    id:"about",
     path: "#about-section",
   },
   {
-    title: "Projects",
+    id:"projects",
     path: "#projects-section",
   },
   {
-    title: "Contact",
+    id:"contact",
     path: "#contact-section",
   },
 ];
 
-const Navbar = () => {
+const Navbar = ({content}) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+
+  
+  for (let navLink of navLinks){
+    navLink.title = content["navLinks"].find((i) => i["id"] === navLink.id)["title"];
+  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 bg-navbar bg-opacity-90">
@@ -73,9 +73,7 @@ const Navbar = () => {
         <div className=" menu hidden md:block md:w-auto">
           <div className="flex items-center justify-center">
             
-              <span className="mr-6">
-                <LanguageSwitchButton/>
-              </span>
+
             
 
             <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
@@ -97,6 +95,10 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
+
+            <span className="mr-6">
+                <LanguageSwitchButton/>
+              </span>
           </div>
         </div>
       </div>
