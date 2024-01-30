@@ -98,7 +98,7 @@ const ContactSection = ({ content }) => {
             </h1>
             <InputBox
               onChange={(value) => setSubject(value)}
-              className="text-sm md:text-lg"
+              className="text-sm lg:text-lg"
               type="text"
               placeholder={content["form"]["subject"]["placeholder"]}
             />

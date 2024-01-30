@@ -7,12 +7,14 @@ import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import React from "react";
 import { LanguageContext } from "./contexts/LanguageContext";
+import GithubService from "./services/GithubService";
 
 const content = ""
 
 export default function Home() {
 
   const {language , changeLanguage} = React.useContext(LanguageContext);
+  
   const [content, setContent] = React.useState(undefined);
 
   React.useEffect(() => {
@@ -29,6 +31,7 @@ export default function Home() {
   if (!content) {
     return <div></div>;
   }
+  
 
   return (
 

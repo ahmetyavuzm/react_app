@@ -5,7 +5,9 @@ const nextConfig = {
     images: {
         unoptimized: true,
     },
-    apiRequestBodyParse: true,
+
+    //basePath: '/next_app', // GitHub repository adınız
+    //assetPrefix: '/next_app/', // 
 }
 
 module.exports = nextConfig
