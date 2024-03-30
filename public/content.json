@@ -30,15 +30,15 @@
                     "Yavuz",
                     "Yazılım Geliştiriciyim",
                     "Web Geliştiriciyim",
-                    "Otomasyon Uzmanıyım"
+                    "Öğrenciyim"
                 ],
-                "description": "Bir yazılım geliştiricisiyim. Web ve mobil uygulamalar geliştiriyorum.",
+                "description": "Merhaba benim adım Yavuz. Bilgisayar Mühendisliği okuyorum ve kendimi bu alanda daha fazla geliştirmek istiyorum. Bu sitede yaptığım projeleri ve kendim hakkında bilgileri bulabilirsiniz.",
                 "hire-button": "İşe Al",
                 "download-button": "CV İndir"
             },
             "about-section": {
                 "title": "Hakkımda",
-                "description": "Merhaba, ben Yavuz. 2018 yılında Bilgisayar Programcılığı bölümünden mezun oldum. 2019 yılından beri yazılım geliştiricisi olarak çalışıyorum. Şu anda bir yazılım şirketinde çalışıyorum. Aynı zamanda freelance olarak da çalışıyorum. Web ve mobil uygulamalar geliştiriyorum. Ayrıca otomasyon konusunda da uzmanım. Otomasyon konusunda da çalışmalar yapıyorum.",
+                "description": "İsmim Ahmet Yavuz Mutlu, 2003 Ankara doğumluyum ve 20 yaşımdayım. Şu anda Hacettepe Üniversitesi Bilgisayar Mühendisliği 2. sınıf öğrencisiyim. Okulumuzun ACM topluluğunun ARGE biriminde aktif olarak yer alıyorum. Web geliştirme ve yapay zeka konularında kendimi geliştirmeye çalışıyorum. Şu anda Arkadaşlarım ile geliştirmeye devam ettiğimiz TOONINGO adında yapay zeka tabanlı çizgi roman çeviri uygulamamız üzerinde çalışmaya devam ediyorum. Aynı zamanda bu sene kendimi geliştirmek için Teknofest projelerine de katılıyorum. Orta (B1+) düzeyinde ingilizce biliyorum. Aynı zamanda japonca dersleri alıyorum. Müzik, manga, anime ve satranç hobi alanlarımdır.",
                 "tabs": [
 
                     {
@@ -48,12 +48,15 @@
                             "HTML",
                             "CSS",
                             "JavaScript",
+                            "Java",
+                            "OOP",
+                            "Rest API",
                             "React",
                             "Next.js",
                             "Tailwind CSS",
                             "Node.js",
                             "Görüntü İşleme",
-                            "Otomasyon",
+                            "Web Otomasyonu",
                             "Web Geliştirme"
                         ]
                     },
@@ -159,16 +162,16 @@
                     "Yavuz",
                     "Software Developer",
                     "Web Developer",
-                    "Automation Expert"
+                    " a Student"
                 ],
-                "description": "I'm a software developer. I develop web and mobile applications.",
+                "description": " Hello, my name is Yavuz. I'm studying Computer Engineering and I want to improve myself in this field. You can find the projects I have done and information about myself on this site.",
                 "hire-button": "Hire Me",
                 "download-button": "Download CV"
             
             },
             "about-section": {
                 "title": "About Me",
-                "description": "Hello, I'm Yavuz. I graduated from Computer Programming department in 2018. I have been working as a software developer since 2019. I'm currently working at a software company. I also work as a freelancer. I develop web and mobile applications. I'm also an expert in automation. I'm also working on automation.",
+                "description": "My name is Ahmet Yavuz Mutlu, I was born in Ankara in 2003, and I am currently 20 years old. I am a second-year Computer Engineering student at Hacettepe University. I am actively involved in the R&D unit of our university's ACM community. I am working on improving myself in web development and artificial intelligence. Currently, I am working on a AI-based comic translation application called TOONINGO with my friends. I am also participating in Teknofest projects this year to further develop myself. I have an intermediate level of English (B1+). Additionally, I am taking Japanese lessons. My hobbies include music, manga, anime, and chess.",
                 "tabs": [
 
                     {
@@ -178,13 +181,16 @@
                             "HTML",
                             "CSS",
                             "JavaScript",
+                            "Java",
+                            "OOP",
+                            "Rest API",
                             "React",
                             "Next.js",
                             "Tailwind CSS",
                             "Node.js",
                             "Image Processing",
-                            "Automation",
-                            "Web Development"
+                            "Web Development",
+                            "Web Automation"
                         ]
                     },
                     {

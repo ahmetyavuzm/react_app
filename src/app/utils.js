@@ -6,6 +6,7 @@ import {
   faInstagram,
   faLinkedin,
   faGithub,
+  faGoogle
 } from "@fortawesome/free-brands-svg-icons";
 
 import React from "react";
@@ -49,5 +50,16 @@ export const socialLinks = [
       },
   
       icon: <FontAwesomeIcon icon={faGithub} />,
+    },
+    {
+      id: "gmail",
+      title: "gmail",
+      link: "mailto:ahmetyavuzm@gmail.com",
+      colors: {
+        default: "red-400",
+        hover: "red-200",
+      },
+  
+      icon: <FontAwesomeIcon icon={faGoogle} />,
     },
   ];

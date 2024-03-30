@@ -53,7 +53,7 @@ const ProjectCard = ({ content, project }) => {
                   
                 </div>
               </Link>
-              <div>{content["github"]}</div>
+              <div className=" text-sm sm:text-base">{content["github"]}</div>
               </div>
               
               <div className="flex flex-col items-center justify-center">
@@ -62,7 +62,7 @@ const ProjectCard = ({ content, project }) => {
                   <FontAwesomeIcon icon={faEye} className="w-full h-full" />
                 </div>
               </button>
-              <div>{content["description"]}</div>
+              <div className=" text-sm sm:text-base">{content["description"]}</div>
               </div>
               
             </div>
