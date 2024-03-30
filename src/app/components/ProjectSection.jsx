@@ -1,13 +1,13 @@
 import React from "react";
 import GithubService from "../services/GithubService.js";
 import ProjectCard from "./ProjectCard.jsx";
-
+import { LanguageContext } from "../contexts/LanguageContext";
 
 let firstUpdate = false;
 
 const ProjectSection = ({content}) => {
   const [projects, setProjects] = React.useState([]);
-
+  const { language, changeLanguage } = React.useContext(LanguageContext);
   const [currentTag, setCurrentTag] = React.useState("all");
 
   React.useEffect(() => {
@@ -15,6 +15,7 @@ const ProjectSection = ({content}) => {
       const result = await GithubService.getProjects();
       firstUpdate = true;
       setProjects(result);
+
     };
 
     fetchData();
@@ -25,9 +26,12 @@ const ProjectSection = ({content}) => {
     if (currentTag === "all") {
       return true;
     } else {
-      return project["tags"].includes(currentTag);
+      return project["content"]["tags"].includes(currentTag);
     }
-  });
+  })
+
+  console.log(filteredProjects);
+
 
   return (
     <section
@@ -46,7 +50,7 @@ const ProjectSection = ({content}) => {
           {content["project-tags"].map((tag, index) => (
             <li key={index} className="mx-2 mb-1 md:my-0">
               <button
-                onClick={() => setCurrentTag(tag["id"])}
+                onClick={() => {setCurrentTag(tag["id"])}}
                 className={`${
                   currentTag === tag["id"]
                     ? "text-primary-400 border border-primary-400"
@@ -62,12 +66,11 @@ const ProjectSection = ({content}) => {
 
       <div>
         <ul className="flex flex-wrap justify-center">
-          {filteredProjects.map((project, index) => (
-            <li key={index} className="mx-2 mb-1 md:my-0">
-              <ProjectCard project={project} />
+          {filteredProjects.map((project,index) =>{
+            return <li key={index} className="mx-1 mb-2">
+              <ProjectCard content={content} project={project} />
             </li>
-          ))}
-
+          })}
           <span
             className={`${
               filteredProjects.length === 0 && firstUpdate

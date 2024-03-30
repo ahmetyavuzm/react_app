@@ -1,6 +1,13 @@
 {
-    "title": "My Portfolio Website",
-    "description": "My Portfolio Website built with React, Next.js, and Tailwind CSS.",
-    "longDescription": "My Portfolio Website built with React, Next.js, and Tailwind CSS.",
-    "tags":["All", "Web", "Frontend"]
+    "en":{
+        "title": "My Portfolio Website",
+        "description": "My Portfolio Website built with React, Next.js, and Tailwind CSS.",
+        "longDescription": " My portfolio website that I created to introduce myself and gain more experience in programming. While coding this site, I had the opportunity to learn technologies such as REST APIs, React, Next.js. I also gained more experience with Tailwind CSS. By creating the necessary connections with my Github account, I strengthened my use of ready-made APIs while showcasing my projects."
+    },
+    "tr":{
+        "title": "Benim Portföy Web Sitem",
+        "description": "React, Next.js ve Tailwind CSS ile oluşturduğum Portföy Sitem.",
+        "longDescription": "Kendimi tanıtmak ve proglama hakkında daha fazla tecrübe kazanmak için oluşturduğum portföy sitem. Bu siteyi kodlarken REST API'ler, React, Next.js gibi teknolojileri öğrenme fırsatı buldum. Ayrıca Tailwind CSS ile daha fazla tecrübe kazandım. Github hesabımı ile gerekli bağlantıları oluşturarak, projelerimi segilerken aynı zamanda hazır API kullanımını da pekiştirdim."
+    },
+    "tags":["web", "react", "frontend", "next.js", "tailwindcss"]
 }

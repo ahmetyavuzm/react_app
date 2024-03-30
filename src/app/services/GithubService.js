@@ -61,7 +61,8 @@ const getRepoWebsiteConfig = async (repo) => {
     const config = await response.json()
 
     const base64Content = config["content"];
-    const decodedContent = atob(base64Content, config["encoding"]);
+    //const decodedContent = atob(base64Content, config["encoding"]);
+    const decodedContent = Buffer.from(base64Content, 'base64').toString('utf-8');
 
     return JSON.parse(decodedContent);
 }
@@ -71,14 +72,19 @@ const getProjects = async () => {
     const projects = [];
     const repos = await getRepos();
     for (const repo in repos) {
-        const config = await getRepoWebsiteConfig(repos[repo]);
+        let config = {};
+        const content = await getRepoWebsiteConfig(repos[repo]);
 
-        if(config === null){
+        if(content === null){
             continue;
         }
 
+        
+
+
         const imageURL = await getRepoCoverImageURL(repos[repo]);
         
+        config["content"] = content;
         config["imageURL"] = imageURL;
         config["repoURL"] = repos[repo]["html_url"];
         config["repoName"] = repos[repo]["name"];

@@ -7,13 +7,15 @@ import { socialLinks } from "../utils";
 import InputBox from "./InputBox";
 import TextArea from "./TextArea";
 
+import EmailService from "../services/EmailService";
+
 
 const ContactSection = ({ content }) => {
   const [email, setEmail] = React.useState("");
   const [subject, setSubject] = React.useState("");
   const [message, setMessage] = React.useState("");
 
-  console.log(email, subject, message);
+  //console.log(email, subject, message);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,27 +25,9 @@ const ContactSection = ({ content }) => {
         message: message,
         };
     
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
+    const response = await EmailService.sendMail(data);
 
-    const options = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSONdata,
-        };
-    
-
-    const response = await fetch(endpoint, options);
     console.log(response);
-    const responseData = await response.json();
-    console.log(responseData);
-
-    if (responseData.status === 200) {
-        console.log("Message Sent.");
-    }
-
 
     }
   return (
@@ -76,10 +60,12 @@ const ContactSection = ({ content }) => {
           </ul>
         </div>
 
+       
         <form
           onSubmit={(e) => {handleSubmit(e);}}
-          className="w-10/12 h-full mt-8 sm:w-[300px] lg:w-[400px] md:mt-0"
+          className=" w-10/12 h-full mt-8 sm:w-[300px] lg:w-[400px] md:mt-0"
         >
+        <div>
           <div className="mb-2 lg:mb-8">
             <h1 className="text-md lg:text-2xl bg-black font-semibold text-gray-200">
               {content["form"]["email"]["title"]}
@@ -123,7 +109,9 @@ const ContactSection = ({ content }) => {
               {content["form"]["submit"]["title"]}
             </button>
           </div>
+          </div>
         </form>
+
       </div>
     </section>
   );

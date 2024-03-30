@@ -6,8 +6,8 @@
 
     "content": {
         "tr": {
-            "title": "Porfoylo Websitem",
-            "description": "Next.js, React ve Tailwind CSS kullanarak oluşturduğum porfoylo websitem.",
+            "title": "Portfoylo Sitem",
+            "description": "Next.js, React ve Tailwind CSS kullanarak oluşturduğum porfoylo sitem.",
             "navbar": {
                 "navLinks": [
                     {
@@ -95,7 +95,11 @@
                     }
                 ] ,
                 "not-found":"Proje Bulunamadı :(",
-                "loading": "Yükleniyor..."
+                "loading": "Yükleniyor...",
+                "description":"Açıklama",
+                "description_title":"Açıklamayı Göster",
+                "github": "Github",
+                "github_title": "Github Sayfasına Git"
             },
             "contact-section": {
                 "title": "Hadi Tanışalım!",
@@ -222,7 +226,11 @@
                     }
                 ],
                 "not-found":"No Projects Found :(",
-                "loading": "Loading..."
+                "loading": "Loading...",
+                "description":"Description",
+                "description_title":"Show Description",
+                "github": "Github",
+                "github_title": "Go To Github Page"
             
             },
             "contact-section": {

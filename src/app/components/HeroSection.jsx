@@ -54,6 +54,27 @@ const HeroSection = ({ content }) => {
     <button id="dummy-delete" onClick={() => setElement(<div></div>)}></button>
   );
 
+
+  const downloadPDF = () => {
+    // PDF dosyasının URL'i
+    const pdfURL = "./images/CV.pdf";
+    
+    // Yeni bir link elementi oluşturuluyor
+    const link = document.createElement('a');
+    link.href = pdfURL;
+    
+    // İndirme işlemi için gerekli ayarlar yapılıyor
+    link.setAttribute('download', 'CV.pdf');
+    link.setAttribute('target', '_blank');
+    
+    // Link tıklanarak indirme işlemi gerçekleştiriliyor
+    document.body.appendChild(link);
+    link.click();
+    
+    // Link elementi kaldırılıyor
+    document.body.removeChild(link);
+  }
+
   return (
     <section>
       <div className="grid grid-cols-1 lg:grid-cols-12 ">
@@ -89,6 +110,7 @@ const HeroSection = ({ content }) => {
               <button
                 id="download-btn"
                 className="w-full rounded-full bg-[#121212] bg-opacity-100 "
+                onClick={() => downloadPDF()}
               >
                 <div className="px-6 py-3 sm:w-fit rounded-full w-full z-20 text-transparent bg-clip-text bg-gradient-to-br from-primary-400 to-secondary-500  hover:text-white">
                   {" "}
