@@ -57,7 +57,7 @@ const HeroSection = ({ content }) => {
 
   const downloadPDF = () => {
     // PDF dosyasının URL'i
-    const pdfURL = "./images/CV.pdf";
+    const pdfURL = "./CV.pdf";
     
     // Yeni bir link elementi oluşturuluyor
     const link = document.createElement('a');
