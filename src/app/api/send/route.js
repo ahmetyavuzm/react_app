@@ -46,4 +46,4 @@ export async function POST(req, res) {
   }
 }
 
-export const dynamic = "force-static";
+//export const dynamic = "force-static";
