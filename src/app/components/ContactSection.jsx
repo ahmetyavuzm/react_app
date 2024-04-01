@@ -23,6 +23,11 @@ const ContactSection = ({ content }) => {
       subject: subject,
       message: message,
     };
+
+    if(data.email === "" || data.subject === "" || data.message === ""){
+      alert("Please fill all the fields");
+      return;
+    }
   
 
     const response = await fetch('/api/send', {
@@ -34,8 +39,11 @@ const ContactSection = ({ content }) => {
     });
 
     const responseData = await response.json();
-    
-    console.log(responseData);
+    if (response.ok) {
+      alert("Message sent successfully");
+    }else{
+      alert("An error occured while sending the message");
+    }
   
   };
   
@@ -80,7 +88,7 @@ const ContactSection = ({ content }) => {
               {content["form"]["email"]["title"]}
             </h1>
             <InputBox
-              onChange={(value) => setEmail(value)}
+              onChange={(value) => {setEmail(value)}}
               className="text-sm lg:text-lg"
               type="email"
               placeholder={content["form"]["email"]["placeholder"]}

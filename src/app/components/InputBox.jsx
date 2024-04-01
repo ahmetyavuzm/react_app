@@ -12,7 +12,7 @@ const InputBox = ({
   type = "text",
   placeholder = "",
   validationRegex = undefined,
-  onChange = () => {},
+  onChange,
 }) => {
   const [isFocused, setIsFocused] = React.useState(undefined);
   const [firstFocus, setFirstFocus] = React.useState(true);
@@ -77,6 +77,8 @@ const InputBox = ({
         ) : null}
       </div>
     </div>
+
+    
   );
 };
 
