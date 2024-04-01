@@ -1,4 +1,3 @@
-"use server"
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
@@ -7,9 +6,11 @@ const FROM_EMAIL="mail@yavuzmutlu.com";
 
 const resend = new Resend(RESEND_API_KEY);
 
+export const dynamic = 'force-dynamic' ;
+
 export async function POST(req, res) {
   try {
-
+    console.log(req);
     const body =  await req.json();
     console.log(body);
     const {email, subject , message} = body ;
@@ -47,3 +48,4 @@ export async function POST(req, res) {
     return NextResponse.json({ error});
   }
 }
+
