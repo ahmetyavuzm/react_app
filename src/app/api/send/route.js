@@ -25,6 +25,7 @@ export async function POST(req, res) {
         </>
       ),
     });
+    
 
     const data2 = await resend.emails.send({
       from: FROM_EMAIL,
@@ -45,5 +46,3 @@ export async function POST(req, res) {
     return NextResponse.json({ error});
   }
 }
-
-//export const dynamic = "force-static";
