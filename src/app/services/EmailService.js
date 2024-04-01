@@ -9,7 +9,7 @@ const fromEmail = FROM_EMAIL;
 
 const sendMail = async (data) =>{
 
- const res = await fetch('fetch_url', {
+ const res = await fetch('https://react-app-five-zeta.vercel.app', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
