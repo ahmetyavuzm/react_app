@@ -25,7 +25,7 @@ const ContactSection = ({ content }) => {
     };
   
 
-    const response = await fetch('https://react-3opaict5g-ahmet-yavuz-mutlus-projects.vercel.app/api/send', {
+    const response = await fetch('/api/send', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
