@@ -8,6 +8,21 @@ const nextConfig = {
 
     //basePath: '/next_app', // GitHub repository adınız
     //assetPrefix: '/next_app/', // 
+
+    async headers() {
+        return [
+            {
+                // Tüm kaynaklara erişime izin ver
+                source: '/api/:path*',
+                headers: [
+                    {
+                        key: 'Access-Control-Allow-Origin',
+                        value: '*',
+                    },
+                ],
+            },
+        ];
+    },
 }
 
 module.exports = nextConfig
