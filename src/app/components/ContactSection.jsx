@@ -15,21 +15,30 @@ const ContactSection = ({ content }) => {
   const [subject, setSubject] = React.useState("");
   const [message, setMessage] = React.useState("");
 
-  //console.log(email, subject, message);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
-        email:email,
-        subject: subject,
-        message: message,
-        };
+      email: email,
+      subject: subject,
+      message: message,
+    };
+  
+
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    const responseData = await response.json();
     
-    const response = await EmailService.sendMail(data);
-
-    console.log(response);
-
-    }
+    console.log(responseData);
+  
+  };
+  
   return (
     <section
       id="contact-section"
@@ -62,7 +71,7 @@ const ContactSection = ({ content }) => {
 
        
         <form
-          onSubmit={(e) => {handleSubmit(e);}}
+          onSubmit={(e) => {handleSubmit(e)}}
           className=" w-10/12 h-full mt-8 sm:w-[300px] lg:w-[400px] md:mt-0"
         >
         <div>

@@ -5,11 +5,11 @@ const FROM_EMAIL="mail@yavuzmutlu.com";
 
 const fromEmail = FROM_EMAIL;
 
-
+const apiURL = "https://react-app-five-zeta.vercel.app";
 
 const sendMail = async (data) =>{
 
- const res = await fetch('https://react-app-five-zeta.vercel.app', {
+ const res = await fetch('api', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
